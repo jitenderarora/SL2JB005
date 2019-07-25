@@ -1,0 +1,47 @@
+<html>
+<body>
+
+<p>add all result : </p>
+<p id="assign1"></p>
+<br/><br/>
+<p>callback result : </p>
+<p id="assign2"></p>
+
+<script>
+function myFunction() {
+  var total = addAll(2,3,5,8,91);
+  document.getElementById("assign1").innerHTML =total;
+  checkName('Jitender','Arora',whenFullNameValid);
+}
+
+function addAll(){
+    console.log("Add all invoked");
+    console.log("arguments.length = "+arguments.length);
+    var total = 0;
+    for(i=0;i<arguments.length; i++){
+     console.log(" num = "+arguments[i]);
+     total = total + arguments[i];
+    }
+    console.log("total = "+total);
+
+    return total;
+}
+
+function checkName(firstNm, lastNm,afterFullName){
+
+    if(firstNm && firstNm!= '' && lastNm && lastNm!=''){
+         afterFullName();
+    }
+
+}
+
+function whenFullNameValid(){
+                //console.log("Full name is provided...");
+    document.getElementById("assign2").innerHTML ="Full name is provided...";
+}
+
+myFunction();
+</script>
+
+</body>
+</html>
